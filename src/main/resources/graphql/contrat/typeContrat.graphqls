@@ -1,0 +1,5 @@
+type TypeContrat{
+    id: ID!
+    libelle: String
+    contrats: [Contrat]
+}

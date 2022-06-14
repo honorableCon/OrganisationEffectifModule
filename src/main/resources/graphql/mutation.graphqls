@@ -1,0 +1,12 @@
+type Mutation{
+    statut(libelle: String!): Statut
+    typeContrat(libelle: String!): Statut
+    contrat(contratFields: ContratInput): Contrat
+}
+
+input ContratInput{
+    statutId: ID
+    typeContratId: ID
+    debut: String
+    fin: String
+}

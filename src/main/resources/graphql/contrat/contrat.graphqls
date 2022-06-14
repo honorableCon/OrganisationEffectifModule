@@ -1,0 +1,7 @@
+type Contrat{
+    id: ID!
+    debutContrat: String
+    finContrat: String
+    statut: Statut
+    typeContrat: TypeContrat
+}

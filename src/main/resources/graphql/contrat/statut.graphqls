@@ -1,0 +1,5 @@
+type Statut{
+    id: ID!
+    libelle: String
+    contrats: [Contrat]
+}
