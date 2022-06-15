@@ -5,3 +5,10 @@ type Contrat{
     statut: Statut
     typeContrat: TypeContrat
 }
+
+input ContratInput{
+    statutId: ID
+    typeContratId: ID
+    debut: String
+    fin: String
+}

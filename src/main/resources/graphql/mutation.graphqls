@@ -3,10 +3,3 @@ type Mutation{
     typeContrat(libelle: String!): Statut
     contrat(contratFields: ContratInput): Contrat
 }
-
-input ContratInput{
-    statutId: ID
-    typeContratId: ID
-    debut: String
-    fin: String
-}
