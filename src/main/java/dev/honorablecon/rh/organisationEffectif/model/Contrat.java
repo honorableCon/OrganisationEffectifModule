@@ -27,6 +27,9 @@ public class Contrat {
     @ToString.Exclude
     private Statut statut;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Personnel personnel;
+
     public Contrat(Date debutContrat, Date finContrat, TypeContrat typeContrat, Statut statut) {
         this.debutContrat = debutContrat;
         this.finContrat = finContrat;

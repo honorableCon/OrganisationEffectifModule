@@ -4,26 +4,22 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Entity
-public class Filiere {
+public class Fonction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date debutIntegration;
-    private Date finIntegration;
     private String libelle;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Structure structure;
+    @OneToMany(mappedBy = "fonction")
+    @ToString.Exclude
+    private List<PersonnelFonction> personnelFonctions;
 
-    @OneToMany(mappedBy = "filiere")
-    private List<Personnel> personnels;
 }
