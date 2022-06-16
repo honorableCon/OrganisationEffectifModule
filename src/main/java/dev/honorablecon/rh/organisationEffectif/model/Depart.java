@@ -1,27 +1,24 @@
 package dev.honorablecon.rh.organisationEffectif.model;
 
+
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
-
 
 @Entity
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Statut {
+public class Depart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String libelle;
 
-    public Statut(String libelle) {
-        this.libelle = libelle;
-    }
-
-    @OneToMany(mappedBy = "statut")
+    @ManyToOne(fetch = FetchType.LAZY)
     @ToString.Exclude
-    List<Contrat> contrats;
+    private Cause cause;
+
+    @OneToOne
+    private Personnel personnel;
 }

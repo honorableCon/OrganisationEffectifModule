@@ -28,6 +28,7 @@ public class Contrat {
     private Statut statut;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
     private Personnel personnel;
 
     public Contrat(Date debutContrat, Date finContrat, TypeContrat typeContrat, Statut statut) {

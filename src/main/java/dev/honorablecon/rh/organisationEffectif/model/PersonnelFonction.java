@@ -1,11 +1,9 @@
 package dev.honorablecon.rh.organisationEffectif.model;
 
 import lombok.*;
-import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Objects;
 
 @Entity
 @Getter
@@ -20,8 +18,10 @@ public class PersonnelFonction {
     private Date finFonction;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
     private Fonction fonction;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
     private Personnel personnel;
 }

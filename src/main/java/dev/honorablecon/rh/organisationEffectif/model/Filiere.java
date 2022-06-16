@@ -22,8 +22,10 @@ public class Filiere {
     private String libelle;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
     private Structure structure;
 
     @OneToMany(mappedBy = "filiere")
+    @ToString.Exclude
     private List<Personnel> personnels;
 }
