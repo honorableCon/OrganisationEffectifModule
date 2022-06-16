@@ -1,0 +1,6 @@
+type Filiere{
+    id: ID!
+    debutIntegration: String
+    finIntegration: String
+    libelle: String
+}

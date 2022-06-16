@@ -5,4 +5,8 @@ type Query{
     statuts: [Statut]
     typeContratById(id: ID!): TypeContrat
     typeContrats: [TypeContrat]
+    filiereById(id: ID!): Filiere
+    filieres: [Filiere]
+    structureById(id: ID!): Structure
+    structures: [Structure]
 }
