@@ -19,4 +19,8 @@ public class Cause {
     @OneToMany(mappedBy = "cause")
     @ToString.Exclude
     private List<Depart> departs;
+
+    public Cause(String libelle) {
+        this.libelle = libelle;
+    }
 }
