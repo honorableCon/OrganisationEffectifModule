@@ -1,12 +1,31 @@
 type Query{
     contratById(id: ID!): Contrat
     contrats: [Contrat]
+
     statutById(id: ID!): Statut
     statuts: [Statut]
+
     typeContratById(id: ID!): TypeContrat
     typeContrats: [TypeContrat]
+
     filiereById(id: ID!): Filiere
     filieres: [Filiere]
+
     structureById(id: ID!): Structure
     structures: [Structure]
+
+    fonctionById(id: ID!): Fonction
+    fonctions:[Fonction]
+
+    personnelById(id: ID!): Personnel
+    personnels:[Personnel]
+
+    personnelFonctionById(id: ID!): PersonnelFonction
+    personnelFonctions: [PersonnelFonction]
+
+    causeById(id: ID!): Cause
+    causes: [Cause]
+
+    departById(id: ID!): Depart
+    departs: [Depart]
 }

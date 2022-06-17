@@ -15,12 +15,21 @@ public class Personnel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(length = 16)
+    private String cni;
+    @Column(length = 64)
     private String prenom;
+    @Column(length = 32)
     private String nom;
+    @Column(length = 8)
     private String sexe;
+    @Temporal(TemporalType.DATE)
     private Date naissance;
+    @Column(length = 32)
     private String nationalite;
+    @Column(length = 32)
     private String email;
+    @Column(length = 16)
     private String telephone;
     private Integer nombreConjoint;
     private Integer nombreEnfant;

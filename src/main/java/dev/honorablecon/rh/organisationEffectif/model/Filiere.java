@@ -17,7 +17,9 @@ public class Filiere {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Temporal(TemporalType.DATE)
     private Date debutIntegration;
+    @Temporal(TemporalType.DATE)
     private Date finIntegration;
     private String libelle;
 

@@ -4,6 +4,7 @@ package dev.honorablecon.rh.organisationEffectif.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -14,6 +15,8 @@ public class Depart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Temporal(TemporalType.DATE)
+    private Date dateDepart;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @ToString.Exclude

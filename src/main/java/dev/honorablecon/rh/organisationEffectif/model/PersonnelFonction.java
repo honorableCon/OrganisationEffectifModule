@@ -14,7 +14,9 @@ public class PersonnelFonction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Temporal(TemporalType.DATE)
     private Date debutFonction;
+    @Temporal(TemporalType.DATE)
     private Date finFonction;
 
     @ManyToOne(fetch = FetchType.LAZY)

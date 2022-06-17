@@ -1,0 +1,5 @@
+type Fonction{
+    id: ID!
+    libelle: String
+    personnelFonctions: [PersonnelFonction]
+}

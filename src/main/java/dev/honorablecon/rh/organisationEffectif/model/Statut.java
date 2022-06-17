@@ -15,6 +15,7 @@ public class Statut {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(length = 32)
     private String libelle;
 
     public Statut(String libelle) {

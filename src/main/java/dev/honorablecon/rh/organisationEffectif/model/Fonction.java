@@ -14,6 +14,7 @@ public class Fonction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(length = 32)
     private String libelle;
 
     @OneToMany(mappedBy = "fonction")

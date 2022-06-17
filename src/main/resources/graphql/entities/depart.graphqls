@@ -1,0 +1,7 @@
+type Depart{
+    id: ID!
+    libelle: String
+    dateDepart: String
+    cause: Cause
+    personnel: Personnel
+}

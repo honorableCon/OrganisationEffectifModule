@@ -14,6 +14,7 @@ public class TypeContrat {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(length = 32)
     private String libelle;
 
     public TypeContrat(String libelle) {

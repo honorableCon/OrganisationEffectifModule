@@ -1,0 +1,7 @@
+type PersonnelFonction{
+    id: ID!
+    debutFonction: String
+    finFonction: String
+    contrat: Contrat
+    personnel: Personnel
+}

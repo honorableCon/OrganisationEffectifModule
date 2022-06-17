@@ -1,0 +1,14 @@
+type Personnel{
+    id: ID!
+    prenom: String
+    nom: String
+    sexe: String
+    cni: String
+    nationalite: String
+    email: String
+    telephone: String
+    nombreConjoint: Int
+    nombreEnfant: Int
+    contrats: [Contrat]
+    personnelFonctions: [PersonnelFonction]
+}

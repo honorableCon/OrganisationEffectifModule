@@ -1,0 +1,5 @@
+type Cause{
+    id: ID!
+    libelle: String
+    departs: [Depart]
+}
