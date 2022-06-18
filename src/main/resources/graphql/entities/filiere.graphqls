@@ -4,3 +4,10 @@ type Filiere{
     finIntegration: String
     libelle: String
 }
+
+input FiliereInput{
+    debutIntegration: String
+    finIntegration: String
+    libelle: String
+    structureId: ID
+}

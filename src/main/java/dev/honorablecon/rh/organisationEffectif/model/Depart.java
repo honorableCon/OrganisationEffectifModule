@@ -22,6 +22,16 @@ public class Depart {
     @ToString.Exclude
     private Cause cause;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private Personnel personnel;
+
+    public Depart(Date dateDepart, Cause cause, Personnel personnel) {
+        this.dateDepart = dateDepart;
+        this.cause = cause;
+        this.personnel = personnel;
+    }
+
+    public Depart(Date dateDepart) {
+        this.dateDepart = dateDepart;
+    }
 }

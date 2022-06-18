@@ -1,7 +1,12 @@
-type Depart{
+type Depart {
     id: ID!
-    libelle: String
     dateDepart: String
     cause: Cause
     personnel: Personnel
+}
+
+input DepartInput {
+    causeId: ID
+    personnelId: ID
+    depart: String
 }
