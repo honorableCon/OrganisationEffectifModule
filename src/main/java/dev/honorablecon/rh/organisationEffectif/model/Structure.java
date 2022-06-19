@@ -19,4 +19,8 @@ public class Structure {
     @OneToMany(mappedBy = "structure")
     @ToString.Exclude
     private List<Filiere> filieres;
+
+    public Structure(String libelle){
+        this.libelle = libelle;
+    }
 }

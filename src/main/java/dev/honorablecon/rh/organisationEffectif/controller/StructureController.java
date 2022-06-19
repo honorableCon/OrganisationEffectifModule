@@ -4,6 +4,7 @@ import dev.honorablecon.rh.organisationEffectif.model.Structure;
 import dev.honorablecon.rh.organisationEffectif.repository.StructureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
@@ -23,5 +24,12 @@ public class StructureController {
     public Structure getStructure(@Argument Long id){
         return structureRepository.findById(id)
                 .orElseThrow();
+    }
+
+    @MutationMapping(name = "structure")
+    public Structure setStructure(@Argument String libelle){
+        Structure structure = new Structure(libelle);
+
+        return structureRepository.save(structure);
     }
 }

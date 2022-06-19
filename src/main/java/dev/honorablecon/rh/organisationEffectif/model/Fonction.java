@@ -21,4 +21,5 @@ public class Fonction {
     @ToString.Exclude
     private List<PersonnelFonction> personnelFonctions;
 
+    public Fonction(String libelle){ this.libelle = libelle;}
 }

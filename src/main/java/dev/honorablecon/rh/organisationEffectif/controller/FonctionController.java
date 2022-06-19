@@ -4,8 +4,10 @@ import dev.honorablecon.rh.organisationEffectif.model.Fonction;
 import dev.honorablecon.rh.organisationEffectif.repository.FonctionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -23,5 +25,12 @@ public class FonctionController {
     public Fonction getFonction(@Argument Long id){
         return fonctionRepository.findById(id)
                 .orElseThrow();
+    }
+
+    @MutationMapping(name = "fonction")
+    public Fonction setFonction(@Argument String libelle){
+        Fonction fonction =  new Fonction(libelle);
+
+        return fonctionRepository.save(fonction);
     }
 }
