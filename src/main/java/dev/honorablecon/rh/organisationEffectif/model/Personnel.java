@@ -34,9 +34,9 @@ public class Personnel {
     private Integer nombreConjoint;
     private Integer nombreEnfant;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @ToString.Exclude
-    private Filiere filiere;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @ToString.Exclude
+//    private Filiere filiere;
 
     @OneToMany(mappedBy = "personnel")
     @ToString.Exclude
@@ -48,4 +48,7 @@ public class Personnel {
 
     @OneToOne(mappedBy = "personnel")
     private Depart depart;
+
+    @OneToMany(mappedBy = "personnel")
+    private List<IntegrationFiliere> integrationFilieres;
 }

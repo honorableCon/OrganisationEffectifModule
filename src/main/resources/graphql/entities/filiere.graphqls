@@ -1,13 +1,11 @@
 type Filiere{
     id: ID!
-    debutIntegration: String
-    finIntegration: String
     libelle: String
+    structure: Structure
+    integrationFiliere: [IntegrationFiliere]
 }
 
 input FiliereInput{
-    debutIntegration: String
-    finIntegration: String
     libelle: String
     structureId: ID
 }

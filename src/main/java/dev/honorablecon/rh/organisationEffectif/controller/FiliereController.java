@@ -35,6 +35,16 @@ public class FiliereController {
                 .orElseThrow();
     }
 
+    @MutationMapping(name = "filiere")
+    public Filiere setFiliere(@Argument FiliereInput filiereInput){
+        Structure structure = structureRepository.findById(filiereInput.structureId)
+                .orElseThrow();
+        Filiere filiere = new Filiere();
+        filiere.setStructure(structure);
+        filiere.setLibelle(filiereInput.libelle);
 
-    record FiliereInput(String debutIntegration, String finIntegration, String libelle, Long structureId){};
+        return filiereRepository.save(filiere);
+    }
+
+    record FiliereInput(String libelle, Long structureId){};
 }

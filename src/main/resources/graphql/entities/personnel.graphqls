@@ -11,4 +11,5 @@ type Personnel{
     nombreEnfant: Int
     contrats: [Contrat]
     personnelFonctions: [PersonnelFonction]
+    integrationFilieres: [IntegrationFiliere]
 }

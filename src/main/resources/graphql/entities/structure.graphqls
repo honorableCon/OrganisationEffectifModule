@@ -1,4 +1,5 @@
 type Structure{
     id: ID!
     libelle: String
+    filieres: [Filiere]
 }

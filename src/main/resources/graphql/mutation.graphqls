@@ -3,11 +3,11 @@ type Mutation{
     typeContrat(libelle: String!): TypeContrat
     structure(libelle: String!): Structure
     cause(libelle: String!): Cause
+    filiere(filiereInput: FiliereInput): Filiere
 
     contrat(contratFields: ContratInput): Contrat
     depart(departInput: DepartInput): Depart
 
     personnelFonction(personnelFonctionInput: PersonnelFonctionInput): PersonnelFonction
-    filiere(filiereInput: FiliereInput): Filiere
 
 }

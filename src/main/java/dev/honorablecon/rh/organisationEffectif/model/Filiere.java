@@ -17,17 +17,16 @@ public class Filiere {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Temporal(TemporalType.DATE)
-    private Date debutIntegration;
-    @Temporal(TemporalType.DATE)
-    private Date finIntegration;
     private String libelle;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @ToString.Exclude
     private Structure structure;
 
+//record FiliereInput(String libelle, Long structureId){};
     @OneToMany(mappedBy = "filiere")
-    @ToString.Exclude
-    private List<Personnel> personnels;
+    private List<IntegrationFiliere> integrationFilieres;
+
+
 }
+

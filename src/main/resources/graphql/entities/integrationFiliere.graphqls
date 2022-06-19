@@ -1,0 +1,6 @@
+type IntegrationFiliere{
+    debutIntegration: String
+    finIntegration: String
+    filiere: Filiere
+    personnel: Personnel
+}
