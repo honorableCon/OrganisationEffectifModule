@@ -5,3 +5,10 @@ type PersonnelFonction{
     contrat: Contrat
     personnel: Personnel
 }
+
+input PersonnelFonctionInput{
+    debutFonction: String
+    finFonction: String
+    fonctionId: ID
+    personnelId: ID
+}

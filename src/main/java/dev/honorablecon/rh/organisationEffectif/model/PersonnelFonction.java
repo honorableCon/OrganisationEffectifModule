@@ -26,4 +26,11 @@ public class PersonnelFonction {
     @ManyToOne(fetch = FetchType.LAZY)
     @ToString.Exclude
     private Personnel personnel;
+
+    public PersonnelFonction(Date debutFonction, Date finFonction, Fonction fonction, Personnel personnel) {
+        this.debutFonction = debutFonction;
+        this.finFonction = finFonction;
+        this.fonction = fonction;
+        this.personnel = personnel;
+    }
 }

@@ -1,18 +1,28 @@
 package dev.honorablecon.rh.organisationEffectif.controller;
 
 import dev.honorablecon.rh.organisationEffectif.model.Filiere;
+import dev.honorablecon.rh.organisationEffectif.model.Structure;
 import dev.honorablecon.rh.organisationEffectif.repository.FiliereRepository;
+import dev.honorablecon.rh.organisationEffectif.repository.StructureRepository;
+import dev.honorablecon.rh.organisationEffectif.utils.DateMaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 @Controller
 public class FiliereController {
     @Autowired
     FiliereRepository filiereRepository;
+    @Autowired
+    StructureRepository structureRepository;
 
     @QueryMapping(name = "filieres")
     public List<Filiere> getAllFilieres(){
@@ -24,4 +34,7 @@ public class FiliereController {
         return filiereRepository.findById(id)
                 .orElseThrow();
     }
+
+
+    record FiliereInput(String debutIntegration, String finIntegration, String libelle, Long structureId){};
 }

@@ -6,6 +6,8 @@ type Mutation{
 
     contrat(contratFields: ContratInput): Contrat
     depart(departInput: DepartInput): Depart
+
+    personnelFonction(personnelFonctionInput: PersonnelFonctionInput): PersonnelFonction
     filiere(filiereInput: FiliereInput): Filiere
 
 }
