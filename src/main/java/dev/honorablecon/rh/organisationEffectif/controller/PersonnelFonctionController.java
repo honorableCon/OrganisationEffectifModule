@@ -45,7 +45,7 @@ public class PersonnelFonctionController {
                 .orElseThrow();
         Date debutFonction = DateMaker.strToDate(personnelFonctionInput.debutFonction);
         Date finFonction = DateMaker.strToDate(personnelFonctionInput.finFonction);
-        PersonnelFonction personnelFonction = new PersonnelFonction(debutFonction, finFonction, fonction, personnel);
+        PersonnelFonction personnelFonction = new PersonnelFonction(debutFonction, finFonction, fonction);
 
         return personnelFonctionRepository.save(personnelFonction);
     }

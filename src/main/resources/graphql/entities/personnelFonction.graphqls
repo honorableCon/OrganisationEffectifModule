@@ -3,6 +3,7 @@ type PersonnelFonction{
     debutFonction: String
     finFonction: String
     contrat: Contrat
+    fonction: Fonction
     personnel: Personnel
 }
 

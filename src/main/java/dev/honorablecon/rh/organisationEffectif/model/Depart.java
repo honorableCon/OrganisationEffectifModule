@@ -15,6 +15,7 @@ public class Depart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String note;
     @Temporal(TemporalType.DATE)
     private Date dateDepart;
 

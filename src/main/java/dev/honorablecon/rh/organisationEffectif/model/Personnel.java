@@ -24,7 +24,7 @@ public class Personnel {
     @Column(length = 8)
     private String sexe;
     @Temporal(TemporalType.DATE)
-    private Date naissance;
+    private Date dateDeNaissance;
     @Column(length = 32)
     private String nationalite;
     @Column(length = 32)
@@ -34,9 +34,6 @@ public class Personnel {
     private Integer nombreConjoint;
     private Integer nombreEnfant;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @ToString.Exclude
-//    private Filiere filiere;
 
     @OneToMany(mappedBy = "personnel")
     @ToString.Exclude
@@ -50,5 +47,45 @@ public class Personnel {
     private Depart depart;
 
     @OneToMany(mappedBy = "personnel")
+    @ToString.Exclude
     private List<IntegrationFiliere> integrationFilieres;
+
+    public Personnel(Long id, String cni, String prenom, String nom, String sexe, Date dateDeNaissance, String nationalite, String email, String telephone, Integer nombreConjoint, Integer nombreEnfant) {
+        this.id = id;
+        this.cni = cni;
+        this.prenom = prenom;
+        this.nom = nom;
+        this.dateDeNaissance = dateDeNaissance;
+        this.sexe = sexe;
+        this.nationalite = nationalite;
+        this.email = email;
+        this.telephone = telephone;
+        this.nombreConjoint = nombreConjoint;
+        this.nombreEnfant = nombreEnfant;
+    }
+
+    public Personnel(String prenom, String nom, String sexe, String cni, String nationalite, String email, String telephone, Integer nombreConjoint, Integer nombreEnfant) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.sexe = sexe;
+        this.cni = cni;
+        this.nationalite = nationalite;
+        this.email = email;
+        this.telephone = telephone;
+        this.nombreConjoint = nombreConjoint;
+        this.nombreEnfant = nombreEnfant;
+    }
+
+    public Personnel(String prenom, String nom, Date dateDeNaissance, String sexe, String cni, String nationalite, String email, String telephone, Integer nombreConjoint, Integer nombreEnfant) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.dateDeNaissance = dateDeNaissance;
+        this.sexe = sexe;
+        this.cni = cni;
+        this.nationalite = nationalite;
+        this.email = email;
+        this.telephone = telephone;
+        this.nombreConjoint = nombreConjoint;
+        this.nombreEnfant = nombreEnfant;
+    }
 }

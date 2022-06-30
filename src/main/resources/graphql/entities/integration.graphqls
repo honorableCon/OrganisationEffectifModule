@@ -1,6 +1,8 @@
-type IntegrationFiliere{
+type IntegrationFiliere {
+    id: ID!
     debutIntegration: String
     finIntegration: String
+    etat: Boolean
     filiere: Filiere
     personnel: Personnel
 }

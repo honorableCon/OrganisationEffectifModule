@@ -27,9 +27,15 @@ public class PersonnelFonction {
     @ToString.Exclude
     private Personnel personnel;
 
-    public PersonnelFonction(Date debutFonction, Date finFonction, Fonction fonction, Personnel personnel) {
+    public PersonnelFonction(Date debutFonction, Date finFonction, Fonction fonction) {
         this.debutFonction = debutFonction;
         this.finFonction = finFonction;
+        this.fonction = fonction;
+    }
+
+    public PersonnelFonction(Date dateDebut, Date dateFin, Fonction fonction, Personnel personnel) {
+        this.debutFonction = dateDebut;
+        this.finFonction = dateFin;
         this.fonction = fonction;
         this.personnel = personnel;
     }

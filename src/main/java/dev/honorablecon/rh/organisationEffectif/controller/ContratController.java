@@ -49,7 +49,7 @@ public class ContratController {
         Date debutContrat = formatter.parse(contratFields.debut);
         Date finContrat = formatter.parse(contratFields.debut);
 
-        Contrat contrat = new Contrat(debutContrat, finContrat, typeContrat, statut);
+        Contrat contrat = new Contrat(debutContrat, finContrat, typeContrat, statut, true);
 
         return contratRepository.save(contrat);
     }

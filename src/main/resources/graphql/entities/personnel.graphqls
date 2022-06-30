@@ -3,6 +3,7 @@ type Personnel{
     prenom: String
     nom: String
     sexe: String
+    dateDeNaissance: String
     cni: String
     nationalite: String
     email: String
@@ -12,4 +13,23 @@ type Personnel{
     contrats: [Contrat]
     personnelFonctions: [PersonnelFonction]
     integrationFilieres: [IntegrationFiliere]
+}
+
+input PersonnelInput{
+    prenom: String
+    nom: String
+    dateDeNaissance: String
+    sexe: String
+    cni: String
+    nationalite: String
+    email: String
+    telephone: String
+    nombreConjoint: Int
+    nombreEnfant: Int
+    dateDebut: String
+    dateFin: String
+    statutId: ID
+    typeContratId: ID
+    fonctionId: ID
+    filiereId: ID
 }

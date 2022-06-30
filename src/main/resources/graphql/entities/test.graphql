@@ -1,7 +1,0 @@
-
-scalar Long
-
-type Query{
-    name: String
-    id: Long
-}

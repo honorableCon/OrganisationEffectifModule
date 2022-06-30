@@ -2,13 +2,16 @@ type Contrat{
     id: ID!
     debutContrat: String
     finContrat: String
+    etat: Boolean
     statut: Statut
     typeContrat: TypeContrat
+    personnel: Personnel
 }
 
 input ContratInput{
     statutId: ID
     typeContratId: ID
+    personnelId: ID
     debut: String
     fin: String
 }
