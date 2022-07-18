@@ -33,7 +33,7 @@ public class Personnel {
     private String telephone;
     private Integer nombreConjoint;
     private Integer nombreEnfant;
-
+    private Boolean deleted;
 
     @OneToMany(mappedBy = "personnel")
     @ToString.Exclude
@@ -62,6 +62,7 @@ public class Personnel {
         this.telephone = telephone;
         this.nombreConjoint = nombreConjoint;
         this.nombreEnfant = nombreEnfant;
+        this.deleted = false;
     }
 
     public Personnel(String prenom, String nom, String sexe, String cni, String nationalite, String email, String telephone, Integer nombreConjoint, Integer nombreEnfant) {
@@ -74,6 +75,7 @@ public class Personnel {
         this.telephone = telephone;
         this.nombreConjoint = nombreConjoint;
         this.nombreEnfant = nombreEnfant;
+        this.deleted = false;
     }
 
     public Personnel(String prenom, String nom, Date dateDeNaissance, String sexe, String cni, String nationalite, String email, String telephone, Integer nombreConjoint, Integer nombreEnfant) {
@@ -87,5 +89,6 @@ public class Personnel {
         this.telephone = telephone;
         this.nombreConjoint = nombreConjoint;
         this.nombreEnfant = nombreEnfant;
+        this.deleted = false;
     }
 }

@@ -23,10 +23,10 @@ public class IntegrationFiliere {
     @Temporal(TemporalType.DATE)
     private Date finIntegration;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Personnel personnel;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Filiere filiere;
 
     public IntegrationFiliere(Date debutIntegration, Date finIntegration, Personnel personnel, Filiere filiere) {

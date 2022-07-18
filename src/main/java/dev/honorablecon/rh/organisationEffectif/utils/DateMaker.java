@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 
 public class DateMaker {
     public static java.util.Date strToDate(String strDate) throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
         return formatter.parse(strDate);
     }

@@ -5,6 +5,7 @@ type Mutation{
     cause(libelle: String!): Cause
     filiere(filiereInput: FiliereInput): Filiere
     personnel(personnelInput: PersonnelInput): Personnel
+    deletePersonnel(id: ID!): Personnel
 
     contrat(contratFields: ContratInput): Contrat
     depart(departInput: DepartInput): Depart
