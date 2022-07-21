@@ -6,6 +6,7 @@ import dev.honorablecon.rh.organisationEffectif.model.TypeContrat;
 import dev.honorablecon.rh.organisationEffectif.repository.ContratRepository;
 import dev.honorablecon.rh.organisationEffectif.repository.StatutRepository;
 import dev.honorablecon.rh.organisationEffectif.repository.TypeContratRepository;
+import dev.honorablecon.rh.organisationEffectif.utils.DateMaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.Arguments;
@@ -41,13 +42,20 @@ public class ContratController {
         return contratRepository.findById(id);
     }
 
+    @QueryMapping(name = "contratsByDate")
+    public List<Contrat> getAllContratsInDate(@Argument String date) throws ParseException {
+        Date debutContrat = DateMaker.strToDate(date+"-01-01");
+
+        return contratRepository.findByDebutContratBetween(debutContrat, DateMaker.addOneYear(debutContrat));
+    }
+
     @MutationMapping(name="contrat")
     public Contrat setContrat(@Argument ContratInput contratFields) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Statut statut = statutRepository.findById(contratFields.statutId).orElseThrow();
         TypeContrat typeContrat = typeContratRepository.findById(contratFields.typeContratId).orElseThrow();
         Date debutContrat = formatter.parse(contratFields.debut);
-        Date finContrat = formatter.parse(contratFields.debut);
+        Date finContrat = formatter.parse(contratFields.fin);
 
         Contrat contrat = new Contrat(debutContrat, finContrat, typeContrat, statut, true);
 

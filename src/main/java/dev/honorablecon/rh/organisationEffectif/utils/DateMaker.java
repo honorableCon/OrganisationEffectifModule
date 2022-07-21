@@ -9,4 +9,12 @@ public class DateMaker {
 
         return formatter.parse(strDate);
     }
+
+    /* add one year */
+    public static java.util.Date addOneYear(java.util.Date date) {
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(java.util.Calendar.YEAR, 1);
+        return cal.getTime();
+    }
 }

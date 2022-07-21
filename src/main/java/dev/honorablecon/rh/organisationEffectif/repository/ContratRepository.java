@@ -3,4 +3,20 @@ package dev.honorablecon.rh.organisationEffectif.repository;
 import dev.honorablecon.rh.organisationEffectif.model.Contrat;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ContratRepository extends JpaRepository<Contrat, Long> {}
+import java.util.Date;
+import java.util.List;
+
+public interface ContratRepository extends JpaRepository<Contrat, Long> {
+/*
+    List<Contrat> findByDebutContrat(Date debutContrat);
+*/
+
+    List<Contrat> findByDebutContratStartingWith(Date debutContrat);
+
+    List<Contrat> findByDebutContrat(Date debutContrat);
+
+    List<Contrat> findByDebutContratAfter(Date debutContrat);
+
+
+    List<Contrat> findByDebutContratBetween(Date debutContrat, Date addOneYear);
+}

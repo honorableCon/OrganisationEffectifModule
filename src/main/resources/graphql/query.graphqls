@@ -1,6 +1,7 @@
 type Query{
     contratById(id: ID!): Contrat
     contrats: [Contrat]
+    contratsByDate(date: String!): [Contrat]
 
     statutById(id: ID!): Statut
     statuts: [Statut]
