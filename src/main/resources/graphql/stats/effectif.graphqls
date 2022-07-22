@@ -1,0 +1,7 @@
+
+type Effectif{
+    cdd: Int
+    cdi: Int
+    stage: Int
+    interim: Int
+}

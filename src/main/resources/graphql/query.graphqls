@@ -1,4 +1,6 @@
 type Query{
+    effectifEmploye(date: String!): Effectif
+
     contratById(id: ID!): Contrat
     contrats: [Contrat]
     contratsByDate(date: String!): [Contrat]
