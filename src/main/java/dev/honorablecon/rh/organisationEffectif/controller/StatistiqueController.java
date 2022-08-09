@@ -19,8 +19,7 @@ public class StatistiqueController {
     ContratRepository contratRepository;
     @Autowired
     StatutRepository statutRepository;
-    @Autowired
-    TypeContratRepository typeContratRepository;
+    @Autowired TypeContratRepository typeContratRepository;
 
     @QueryMapping(name = "effectifEmploye")
     public Effectif getAllEffectif(@Argument String date) throws ParseException {
